@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#203d2d">
+  <meta name="description" content="Conheça a Ecovila Sustentar, em Embu-Guaçu: uma comunidade em desenvolvimento sustentável que cultiva a regeneração, o aprendizado e a vida em comunidade.">
+  <!-- Favicon embutido: folhinha da marca em fundo verde. Sem arquivo extra. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 72'%3E%3Crect width='64' height='72' rx='14' fill='%23203d2d'/%3E%3Cg fill='none' stroke='%23f0d69e' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' transform='translate(6 6.5) scale(0.81)'%3E%3Cpath d='M31 61V25M31 44C17 46 13 35 13 29c11-1 18 5 18 15ZM32 35c0-12 9-18 19-18 0 11-6 19-19 18ZM31 26C21 23 20 13 24 6c8 3 13 11 7 20Z'/%3E%3C/g%3E%3C/svg%3E">
+  <!-- Compartilhamento: título e descrição bonitos no WhatsApp e redes sociais.
+       A capa usa a foto ilustrativa atual; troque por uma foto real da Ecovila depois. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ecovila Sustentar">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Ecovila Sustentar | Cultive um novo jeito de viver">
+  <meta property="og:description" content="Conheça a Ecovila Sustentar, em Embu-Guaçu: uma comunidade em desenvolvimento sustentável que cultiva a regeneração, o aprendizado e a vida em comunidade.">
+  <meta property="og:image" content="https://images.pexels.com/photos/23857952/pexels-photo-23857952.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Remova noindex quando os conteúdos reais estiverem prontos para publicação. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ecovila Sustentar | Cultive um novo jeito de viver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Fraunces:ital,wght@0,400;0,450;1,400&display=swap" rel="stylesheet">
+  <!-- Tailwind removido: o site usa só o CSS próprio (verificado na auditoria — zero classes Tailwind). -->
+
+  <style>
+    /* 01. Identidade e estilos compartilhados. Edite a paleta aqui. */
+    :root {
+      --forest: #203d2d;
+      --forest-deep: #173323;
+      --moss: #62734b;
+      --cream: #f8f7f1;
+      --sand: #eeede3;
+      --honey: #e5be70;
+      --clay: #af684c;
+      --text: #283c2e;
+      --muted: #687064;
+      --line: #d9dccf;
+      --header-height: 78px;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 24px); }
+    body { margin: 0; background: var(--cream); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body.menu-open, body.dialog-open { overflow: hidden; }
+    button, input, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    button:disabled { cursor: default; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; }
+    img { max-width: 100%; }
+    img[hidden], [hidden] { display: none !important; }
+    figure, blockquote, p, h1, h2, h3 { margin: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+    h2 { font-size: clamp(2.1rem, 3.45vw, 3.25rem); line-height: 1.16; letter-spacing: -.045em; text-wrap: balance; }
+    h3 { line-height: 1.25; letter-spacing: -.025em; }
+    ::selection { background: var(--honey); color: var(--forest-deep); }
+    :focus-visible { outline: 3px solid var(--clay); outline-offset: 5px; border-radius: 3px; }
+    [tabindex="-1"]:focus { outline: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; top: -80px; left: 16px; z-index: 200; background: var(--forest); color: white; padding: 12px 20px; border-radius: 4px; }
+    .skip-link:focus { top: 12px; }
+    .container { width: min(100% - 40px, 1216px); margin-inline: auto; }
+    .section-space { padding-block: 76px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 19px; color: var(--moss); font: 600 10px/1.5 var(--sans); letter-spacing: .19em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 26px; height: 1px; background: currentColor; flex-shrink: 0; }
+    .section-heading { margin-bottom: 38px; }
+    .section-heading > p { max-width: 440px; margin-top: 17px; color: var(--muted); }
+    .section-heading.centered { text-align: center; }
+    .section-heading.centered .eyebrow { justify-content: center; }
+    .section-heading.centered > p { margin-inline: auto; }
+    .icon { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .button { display: inline-flex; min-height: 49px; align-items: center; justify-content: center; gap: 22px; padding: 13px 24px; border: 1px solid transparent; border-radius: 5px; background: var(--forest); color: var(--cream); font-size: 12px; line-height: 1.4; font-weight: 600; letter-spacing: .025em; transition: background .2s, transform .2s, box-shadow .2s; }
+    .button:hover { background: #31543b; box-shadow: 0 5px 16px #203d2d16; }
+    .button .icon { width: 17px; height: 17px; transition: transform .25s; }
+    .button:hover .icon { transform: translateX(4px); }
+    .button-honey { color: var(--forest-deep); background: var(--honey); }
+    .button-honey:hover { background: #f0cf8a; }
+    .button-outline { border-color: var(--forest); color: var(--forest); background: transparent; }
+    .button-outline:hover { color: var(--cream); background: var(--forest); }
+    .text-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 44px; padding: 9px 0; border: 0; background: none; color: var(--forest); font-size: 12px; font-weight: 650; }
+    .text-link .icon { width: 16px; height: 16px; transition: transform .25s; }
+    .text-link:hover .icon { transform: translateX(5px); }
+    .text-link:hover { color: var(--clay); }
+    .photo-placeholder { position: relative; overflow: hidden; background: linear-gradient(135deg, #aab496, #6d8061 54%, #bba98a); border-radius: 7px; isolation: isolate; }
+    .photo-placeholder::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, #203d2d04, #84674216); }
+    .photo-placeholder img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.65,.3,1); }
+    .photo-placeholder:hover img { transform: scale(1.035); }
+    figcaption { margin-top: 10px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+    .media-unavailable { display: grid; place-items: center; min-height: 200px; }
+    .image-fallback-text { position: relative; z-index: 1; padding: 28px; color: #fff; font-size: 13px; text-align: center; }
+
+    /* 02. Cabeçalho fixo e navegação mobile. */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: var(--header-height); background: var(--cream); border-bottom: 1px solid transparent; transition: box-shadow .3s, border-color .3s; }
+    .site-header.is-scrolled { border-color: var(--line); box-shadow: 0 3px 20px #172d2207; }
+    .header-inner { display: flex; align-items: center; gap: 12px; height: 100%; width: min(100% - 32px, 1328px); margin: auto; }
+    .brand { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .brand-mark { width: 38px; height: 44px; color: var(--forest); }
+    .brand-wordmark { display: flex; flex-direction: column; }
+    .brand-prefix { font-size: 8px; line-height: 1.5; text-transform: uppercase; font-weight: 600; letter-spacing: .25em; }
+    .brand-name { font: 450 24px/1.12 var(--serif); letter-spacing: -.05em; }
+    .header-visit { margin-left: auto; min-height: 39px; padding: 10px 13px; border-radius: 4px; font-size: 10px; gap: 9px; }
+    .header-visit .icon { display: none; }
+    .menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; width: 42px; height: 44px; padding: 8px; border: 0; background: transparent; color: var(--forest); }
+    .menu-toggle span { width: 22px; height: 1.5px; background: currentColor; transition: transform .25s, opacity .25s; }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-6.5px) rotate(-45deg); }
+    .primary-nav { display: none; position: fixed; top: var(--header-height); bottom: 0; left: 0; right: 0; padding: 30px 28px; background: var(--cream); overflow-y: auto; }
+    .primary-nav.is-open { display: flex; flex-direction: column; animation: nav-enter .25s ease both; }
+    .primary-nav a { padding: 12px 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: 25px; line-height: 1.6; transition: color .2s; }
+    .primary-nav a:hover, .primary-nav a[aria-current="location"] { color: var(--clay); }
+    main { padding-top: var(--header-height); }
+
+    /* 03. Capa. A fotografia é ilustrativa e tem um gradiente de fallback. */
+    .hero { position: relative; isolation: isolate; display: grid; align-items: center; min-height: 640px; min-height: max(640px, calc(100svh - var(--header-height))); padding: 72px 20px 110px; color: #fffdf5; text-align: center; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; z-index: -2; background: linear-gradient(140deg, #738363, #355242 50%, #182f23); }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 53%; animation: forest-arrive 16s ease-out both; }
+    .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #112b233a, #10291e69 48%, #10291e8a), linear-gradient(90deg, #10291e20, transparent, #10291e20); }
+    .hero-content { width: min(100%, 920px); margin: auto; }
+    .hero-sprout { width: 41px; height: 50px; margin: 0 auto 17px; color: #f0d69e; animation: rise-in 1s .1s both; }
+    .hero-title { animation: rise-in 1s .2s both; }
+    .hero-prefix { display: block; margin: 0 0 13px; font: 450 11px/1.5 var(--sans); letter-spacing: .48em; text-indent: .48em; text-transform: uppercase; }
+    .hero-name { display: block; font-size: clamp(4.15rem, 20vw, 5.5rem); line-height: 1.02; letter-spacing: -.064em; font-weight: 400; }
+    .hero-phrase-wrap { margin-top: 26px; animation: rise-in 1s .35s both; }
+    .hero-phrase { display: flex; align-items: center; justify-content: center; min-height: 72px; font-family: var(--serif); font-size: clamp(1.45rem, 2.5vw, 2.1rem); line-height: 1.35; letter-spacing: -.025em; font-weight: 400; transition: opacity .3s, transform .3s; }
+    .hero-phrase.is-changing { opacity: 0; transform: translateY(6px); }
+    .hero-description { margin: 10px auto 0; max-width: 460px; color: #f1f2e7; font-size: 13px; line-height: 1.8; animation: rise-in 1s .45s both; }
+    .hero-cta { margin-top: 29px; min-height: 52px; padding-inline: 26px; font-size: 10px; font-weight: 700; letter-spacing: .12em; animation: rise-in 1s .55s both; }
+    .hero-cta .icon { width: 15px; height: 15px; }
+    .hero-cta:hover .icon { transform: translateY(3px); }
+    .hero-controls { display: flex; justify-content: center; align-items: center; gap: 7px; height: 36px; margin-top: 27px; animation: rise-in 1s .65s both; }
+    .hero-step { position: relative; display: block; width: 22px; height: 2px; background: #fffdf548; transition: background .4s; }
+    .hero-step.active { background: var(--honey); }
+    .rotation-toggle { display: grid; place-items: center; width: 36px; height: 36px; margin-left: 3px; border: 0; background: none; color: #fffdf5cc; }
+    .rotation-toggle:hover { color: var(--honey); }
+    .rotation-toggle .icon { width: 12px; height: 12px; }
+    .hero-wave { position: absolute; bottom: -1px; width: 100%; height: 43px; color: var(--cream); pointer-events: none; }
+
+    /* 04. Apresentação e visão. */
+    .about-grid { display: grid; gap: 42px; align-items: center; }
+    .about-copy > p:not(.eyebrow) { color: var(--muted); margin-top: 22px; max-width: 475px; }
+    .about-copy .button { margin-top: 29px; }
+    .about-photo { aspect-ratio: 1.12; border-radius: 7px 62px 7px 7px; }
+    .about-photo img { object-position: 56% 50%; }
+    .about-caption { display: flex; flex-direction: column; gap: 2px; }
+    .vision { display: grid; gap: 14px; margin-top: 52px; padding-top: 29px; border-top: 1px solid var(--line); }
+    .vision-label { color: var(--moss); font-size: 10px; text-transform: uppercase; letter-spacing: .17em; font-weight: 600; }
+    .vision p { max-width: 970px; color: #65705e; font-family: var(--serif); font-size: 17px; line-height: 1.8; }
+
+    /* 05. Projetos. As superfícies não têm caixas; cada item abre detalhes. */
+    .discover { padding-top: 16px; }
+    .discover-grid { display: grid; grid-template-columns: 1fr; gap: 34px 23px; }
+    .discovery-item { min-width: 0; display: flex; flex-direction: column; }
+    .discovery-image { aspect-ratio: 1.35; }
+    .discovery-item figcaption { font-size: 9px; }
+    .discovery-item h3 { margin-top: 20px; font-size: 24px; }
+    .discovery-item > p { margin-top: 11px; margin-bottom: 12px; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .discovery-item .text-link { align-self: flex-start; margin-top: auto; }
+
+    /* 06. Indicadores. Os campos vazios nunca geram números fictícios. */
+    .impact { padding: 61px 0 35px; background: var(--forest); color: var(--cream); }
+    .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 18px; }
+    .impact-item { text-align: center; }
+    .impact-item:last-child { grid-column: 1 / -1; }
+    .counter { display: block; font: 400 clamp(2.45rem, 4vw, 3.4rem)/1.2 var(--serif); letter-spacing: -.04em; color: #e7c985; }
+    .counter-label { display: block; margin-top: 11px; color: #e0e6d8; font-size: 11px; line-height: 1.55; }
+    .impact-item.counted .counter { animation: counter-in .9s var(--delay, 0s) both; }
+    .data-note { margin-top: 30px; text-align: center; color: #c3cdb9; font-size: 10px; }
+
+    /* 07. Experiências em blocos alternados. */
+    .experiences .section-heading { margin-bottom: 55px; }
+    .experience { display: grid; align-items: center; gap: 29px; margin-top: 62px; scroll-margin-top: 8px; }
+    .experience:first-of-type { margin-top: 0; }
+    .experience-image { aspect-ratio: 1.38; border-radius: 7px; }
+    .experience-tag { color: var(--clay); font-size: 9px; line-height: 1.8; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
+    .experience h3 { font-size: clamp(2rem, 3.15vw, 2.8rem); letter-spacing: -.04em; }
+    .experience-copy > p:not(.experience-tag) { max-width: 445px; margin-top: 19px; color: var(--muted); }
+    .experience-detail { font-size: 12px; color: var(--forest) !important; }
+    .experience .button { margin-top: 26px; }
+
+    /* 08. Depoimentos de demonstração, com navegação manual. */
+    .testimonials { background: #eeefe6; text-align: center; }
+    .testimonials .section-heading { margin-bottom: 19px; }
+    .rating-strip { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; color: #626c59; font-size: 11px; }
+    .stars { color: #916922; font-size: 16px; letter-spacing: .17em; }
+    .testimonial-carousel { max-width: 860px; margin: 28px auto 0; touch-action: pan-y; }
+    .quote-mark { width: 31px; height: 29px; margin: 0 auto 20px; color: #879574; }
+    .testimonial-slide { display: flex; flex-direction: column; justify-content: center; min-height: 260px; transition: opacity .22s, transform .22s; }
+    .testimonial-slide.is-changing { opacity: 0; transform: translateY(5px); }
+    .testimonial-quote { font: 400 clamp(1.4rem, 2.35vw, 2rem)/1.55 var(--serif); letter-spacing: -.025em; }
+    .testimonial-author { margin-top: 27px; font-size: 12px; font-weight: 600; }
+    .testimonial-role { margin-top: 3px; font-size: 11px; color: var(--muted); }
+    .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; }
+    .circle-button { display: grid; place-items: center; width: 43px; height: 43px; border: 1px solid #bec6b1; border-radius: 50%; background: transparent; color: var(--forest); transition: background .2s, color .2s; }
+    .circle-button:hover { background: var(--forest); border-color: var(--forest); color: white; }
+    .circle-button .icon { width: 16px; height: 16px; }
+    .carousel-dots { display: flex; align-items: center; margin-inline: 13px; }
+    .carousel-dot { display: grid; place-items: center; width: 28px; height: 44px; border: 0; background: transparent; }
+    .carousel-dot::after { content: ''; width: 5px; height: 5px; background: #a8b19b; border-radius: 50%; transition: width .2s, background .2s; }
+    .carousel-dot[aria-current="true"]::after { width: 18px; border-radius: 4px; background: var(--forest); }
+    .placeholder-note { margin-top: 21px; color: #646d5d; font-size: 10px; line-height: 1.7; }
+
+    /* 09. Festival: arte provisória autoral, sem datas ou ingressos inventados. */
+    .festival { position: relative; background: #eedfce; overflow: hidden; }
+    .festival-grid { display: grid; align-items: center; gap: 48px; }
+    .festival .eyebrow { color: #8b573e; }
+    .festival-title { font-size: clamp(3.75rem, 6.9vw, 6.2rem); letter-spacing: -.065em; line-height: 1.1; }
+    .festival-title em { color: #a55e42; font-weight: 400; }
+    .festival-copy > p:not(.eyebrow) { max-width: 440px; margin-top: 23px; color: #665d4e; }
+    .festival-date { display: flex; align-items: center; gap: 10px; margin-top: 27px; font-size: 12px; color: #715844; }
+    .festival-date .icon { width: 17px; height: 17px; }
+    .festival .button { margin-top: 26px; }
+    .festival-art { width: min(100%, 440px); margin: 0 auto; }
+    .festival-art svg { width: 100%; height: auto; }
+    .festival-art figcaption { text-align: center; color: #735d4c; }
+
+    /* 10. Parceiros. Substitua cada símbolo pelo logo autorizado. */
+    .partners { padding-block: 60px; border-bottom: 1px solid var(--line); }
+    .partners h2 { text-align: center; font-size: 27px; }
+    .partners-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 32px 18px; margin-top: 37px; }
+    .partner { display: flex; align-items: center; justify-content: center; gap: 11px; color: #777b70; filter: grayscale(1); }
+    .partner svg { width: 32px; height: 36px; flex-shrink: 0; stroke-width: 1.3; }
+    .partner span { max-width: 125px; font-family: var(--serif); font-size: 15px; line-height: 1.45; }
+
+    /* 11. Blog e formulário demonstrativo da newsletter. */
+    .blog-grid { display: grid; gap: 35px; }
+    .blog-card { min-width: 0; display: flex; flex-direction: column; }
+    .blog-image { aspect-ratio: 1.6; }
+    .blog-meta { display: flex; justify-content: space-between; gap: 10px; margin-top: 23px; color: var(--moss); font-size: 9px; letter-spacing: .09em; }
+    .blog-meta span:first-child { text-transform: uppercase; font-weight: 650; }
+    .blog-meta span:last-child { color: var(--muted); letter-spacing: 0; }
+    .blog-card h3 { margin: 13px 0 10px; font-size: 25px; line-height: 1.35; }
+    .blog-card > p { font-size: 12px; color: var(--muted); }
+    .blog-card .text-link { align-self: flex-start; margin-top: auto; padding-top: 18px; }
+    .newsletter { display: grid; gap: 25px; align-items: center; margin-top: 59px; padding-top: 36px; border-top: 1px solid var(--line); }
+    .newsletter h3 { font-size: 29px; }
+    .newsletter-copy > p { margin-top: 8px; color: var(--muted); font-size: 12px; }
+    .newsletter-fields { display: flex; flex-wrap: wrap; gap: 9px; }
+    .newsletter-fields input { flex: 1 1 170px; width: 100%; min-width: 0; height: 49px; padding: 0 16px; background: transparent; border: 1px solid #bcc4b3; border-radius: 4px; color: var(--forest); font-size: 16px; }
+    .newsletter-fields .button { flex: 0 0 auto; padding-inline: 21px; }
+    .form-note { font-size: 10px; line-height: 1.6; color: var(--muted); margin-top: 10px; }
+    .form-status { font-size: 12px; color: var(--forest); margin-top: 13px; line-height: 1.7; }
+
+    /* 12. Localização. O mapa é um espaço reservado, não uma geolocalização. */
+    .location { background: #efeee5; }
+    .location-grid { display: grid; align-items: center; gap: 39px; }
+    .location-copy > p:not(.eyebrow) { max-width: 395px; margin-top: 21px; color: var(--muted); }
+    .location address { max-width: 330px; margin-top: 23px; padding-left: 17px; border-left: 2px solid #a7b197; color: var(--forest); font-size: 13px; font-style: normal; line-height: 1.9; }
+    .location .button { margin-top: 26px; }
+    .map-placeholder { position: relative; display: grid; place-items: center; min-height: 325px; aspect-ratio: 1.55; background: #dee3d3; border-radius: 7px; overflow: hidden; }
+    .map-drawing { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .map-label { position: relative; z-index: 1; text-align: center; color: var(--forest); }
+    .map-pin { display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 12px; background: var(--forest); color: var(--cream); border-radius: 50% 50% 50% 6px; transform: rotate(-45deg); box-shadow: 0 5px 12px #203d2d1c; }
+    .map-pin .icon { width: 25px; height: 25px; transform: rotate(45deg); }
+    .map-label strong { font-family: var(--serif); font-size: 20px; font-weight: 450; }
+    .map-label p { margin-top: 3px; font-size: 10px; }
+
+    /* 13. Rodapé e atalho de contato. */
+    .site-footer { background: var(--forest-deep); color: #f0f1e6; padding: 62px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 22px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-brand .brand-mark { width: 45px; height: 52px; color: #d8e1c8; }
+    .footer-brand .brand-name { font-size: 29px; }
+    .footer-brand .brand-prefix { font-size: 9px; }
+    .footer-brand > p { max-width: 260px; margin-top: 20px; color: #bdc9b7; font-size: 12px; line-height: 1.9; }
+    .footer-heading { margin-bottom: 17px; color: #e5ca93; font: 550 10px/1.5 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+    .footer-links a, .footer-links button { display: inline-flex; align-items: center; gap: 8px; min-height: 35px; padding: 5px 0; border: 0; background: transparent; color: #d4ddce; font-size: 11px; text-align: left; overflow-wrap: anywhere; }
+    .footer-links a:hover, .footer-links button:hover { color: var(--honey); }
+    .footer-links .icon { width: 14px; height: 14px; }
+    .footer-contact { grid-column: 1 / -1; }
+    .footer-contact address { max-width: 260px; margin-top: 12px; color: #bdc9b7; font-size: 11px; font-style: normal; line-height: 1.85; }
+    .footer-bottom { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; flex-direction: column; margin-top: 44px; padding-top: 20px; border-top: 1px solid #cfdbc323; color: #b9c5b1; font-size: 9px; line-height: 1.7; }
+    .footer-bottom button { padding: 3px 0; border: 0; background: transparent; color: #d3dccb; font-size: 10px; text-decoration: underline; text-underline-offset: 4px; }
+    .whatsapp-float { position: fixed; right: 18px; bottom: 19px; z-index: 40; display: grid; place-items: center; width: 51px; height: 51px; padding: 0; border: 1px solid #ffffff35; border-radius: 50%; background: var(--forest); color: white; box-shadow: 0 5px 22px #152e2433; transition: transform .25s, background .25s; }
+    .whatsapp-float:hover { transform: translateY(-4px); background: #37583c; }
+    .whatsapp-float svg { width: 27px; height: 27px; }
+
+    /* 14. Diálogos e formulários. Sem dependências de backend. */
+    .site-dialog { position: fixed; inset: 0; width: min(570px, calc(100% - 28px)); max-height: min(88dvh, 860px); margin: auto; padding: 39px 25px 31px; border: 1px solid #e1e4d7; border-radius: 12px; color: var(--text); background: var(--cream); box-shadow: 0 25px 100px #10271a50; overflow-y: auto; }
+    .site-dialog[open] { animation: dialog-in .25s ease both; }
+    .site-dialog::backdrop { background: #10271ab0; backdrop-filter: blur(5px); }
+    .dialog-close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 37px; height: 37px; border: 0; border-radius: 50%; background: var(--sand); color: var(--forest); }
+    .dialog-close:hover { background: #e2e5d7; }
+    .site-dialog .eyebrow { padding-right: 20px; margin-bottom: 16px; font-size: 9px; }
+    .site-dialog h2 { font-size: 34px; line-height: 1.2; margin-bottom: 18px; }
+    .dialog-intro, .dialog-body > p { margin-bottom: 16px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .dialog-body > p:last-child { margin-bottom: 0; }
+    .dialog-body a { text-decoration: underline; }
+    .dialog-details { margin: 24px 0; border-top: 1px solid var(--line); }
+    .dialog-details > div { display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .dialog-details dt { font-size: 10px; font-weight: 650; text-transform: uppercase; letter-spacing: .08em; color: var(--moss); }
+    .dialog-details dd { margin: 0; font-size: 12px; overflow-wrap: anywhere; }
+    .dialog-actions { margin-top: 26px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-top: 15px; }
+    .field label { font-size: 11px; font-weight: 600; }
+    .field input, .field select, .field textarea { width: 100%; border: 1px solid #c4cbb9; border-radius: 4px; padding: 11px 12px; background: #fffefa; color: var(--forest); font-size: 16px; }
+    .field textarea { resize: vertical; min-height: 95px; }
+    .form-row { display: grid; gap: 0 14px; }
+    .contact-form .button { margin-top: 23px; }
+    .email-preview h3 { font-size: 25px; }
+    .email-preview > p { margin-top: 14px; color: var(--muted); font-size: 12px; }
+    .email-summary { margin: 21px 0; padding: 16px; border-left: 2px solid var(--moss); background: var(--sand); white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
+    .email-preview-actions { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+
+    /* 15. Movimento discreto e adaptações de tela. */
+    @keyframes rise-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes forest-arrive { from { transform: scale(1.08); } to { transform: scale(1); } }
+    @keyframes nav-enter { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes counter-in { from { opacity: .25; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes dialog-in { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @media (prefers-reduced-motion: no-preference) {
+      .motion-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--reveal-delay, 0ms), transform .8s var(--reveal-delay, 0ms); }
+      .motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    }
+    @media (min-width: 520px) {
+      .container { width: min(100% - 56px, 1216px); }
+      .header-inner { width: min(100% - 44px, 1328px); }
+      .brand-mark { width: 44px; height: 49px; }
+      .brand-name { font-size: 27px; }
+      .header-visit { padding-inline: 18px; font-size: 11px; }
+      .header-visit .icon { display: block; width: 14px; height: 14px; }
+      .hero-phrase { min-height: 48px; }
+      .hero-description { font-size: 14px; }
+      .discover-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .discovery-image { aspect-ratio: 1.14; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .site-dialog { padding: 46px 37px 36px; }
+    }
+    @media (min-width: 768px) {
+      :root { --header-height: 86px; }
+      .section-space { padding-block: 96px; }
+      .hero { min-height: max(660px, calc(100svh - var(--header-height))); padding-top: 65px; padding-bottom: 99px; }
+      .hero-prefix { font-size: 12px; }
+      .hero-name { font-size: clamp(5.5rem, 10.3vw, 9.3rem); }
+      .hero-description { max-width: none; }
+      .hero-cta { padding-inline: 29px; font-size: 10px; }
+      .hero-wave { height: 55px; }
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 7%; }
+      .about-photo { aspect-ratio: 1.02; border-top-right-radius: 90px; }
+      .vision { grid-template-columns: 135px 1fr; gap: 25px; margin-top: 62px; }
+      .vision-label { padding-top: 6px; }
+      .discover { padding-top: 14px; }
+      .split-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; }
+      .split-heading > p { max-width: 310px; margin: 0 0 4px; font-size: 13px; }
+      .discover-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .impact { padding-block: 63px 30px; }
+      .impact-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+      .impact-item:last-child { grid-column: auto; }
+      .counter-label { max-width: 150px; margin-inline: auto; }
+      .data-note { margin-top: 32px; }
+      .experience { grid-template-columns: 1.06fr 1fr; gap: 8%; margin-top: 78px; }
+      .experience:nth-of-type(even) { grid-template-columns: 1fr 1.06fr; }
+      .experience:nth-of-type(even) figure { order: 2; }
+      .experience:nth-of-type(even) .experience-copy { order: 1; padding-left: 5%; }
+      .experience-image { aspect-ratio: 1.26; }
+      .experience-copy { padding-bottom: 25px; }
+      .experience-tag { font-size: 9px; }
+      .testimonial-slide { min-height: 220px; }
+      .festival-grid { grid-template-columns: 1.1fr 1fr; gap: 8%; }
+      .partners-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 35px; }
+      .partners { padding-block: 65px; }
+      .partner span { font-size: 17px; }
+      .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 27px; }
+      .blog-image { aspect-ratio: 1.4; }
+      .blog-card h3 { font-size: 23px; }
+      .newsletter { grid-template-columns: 1fr 1fr; gap: 8%; margin-top: 61px; padding-top: 38px; }
+      .newsletter-fields input, .field input, .field select, .field textarea { font-size: 13px; }
+      .location-grid { grid-template-columns: .9fr 1.1fr; gap: 8%; }
+      .map-placeholder { min-height: 355px; }
+      .footer-grid { grid-template-columns: 1.3fr .8fr .8fr 1.25fr; gap: 35px; }
+      .footer-brand, .footer-contact { grid-column: auto; }
+      .footer-bottom { flex-direction: row; align-items: center; }
+      .whatsapp-float { right: 27px; bottom: 25px; width: 53px; height: 53px; }
+    }
+    @media (min-width: 1100px) {
+      .container { width: min(100% - 128px, 1216px); }
+      .section-space { padding-block: 111px; }
+      .about-grid { gap: 10%; grid-template-columns: .95fr 1fr; }
+      .about-photo { aspect-ratio: 1.1; }
+      .discover { padding-top: 17px; }
+      .discover-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 23px; }
+      .discovery-image { aspect-ratio: .98; }
+      .discovery-item h3 { font-size: 22px; }
+      .discovery-item > p { font-size: 12px; }
+      .experience { margin-top: 84px; }
+      .experience-image { aspect-ratio: 1.4; }
+      .experience-tag { font-size: 10px; }
+      .blog-card h3 { font-size: 26px; }
+      .blog-image { aspect-ratio: 1.6; }
+      .newsletter-copy > p { font-size: 13px; }
+    }
+    @media (min-width: 1200px) {
+      .header-inner { width: min(100% - 80px, 1328px); gap: 27px; }
+      .brand { gap: 8px; }
+      .brand-mark { width: 43px; }
+      .brand-name { font-size: 27px; }
+      .primary-nav, .primary-nav.is-open { position: static; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: clamp(15px, 1.55vw, 24px); padding: 0; margin-left: auto; overflow: visible; background: transparent; animation: none; }
+      .primary-nav a { position: relative; padding: 10px 0; border: 0; font: 500 12px/1.4 var(--sans); white-space: nowrap; }
+      .primary-nav a::after { content: ''; position: absolute; bottom: 3px; left: 0; right: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+      .primary-nav a:hover::after, .primary-nav a[aria-current="location"]::after { transform: scaleX(1); }
+      .header-visit { margin-left: 1px; padding-inline: 19px; min-height: 40px; white-space: nowrap; }
+      .menu-toggle { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Símbolos reutilizáveis. O desenho da marca é provisório. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-brand" viewBox="0 0 64 72">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M31 64C15 64 5 52 5 37c0-10 5-20 13-25M45 12c8 5 13 14 13 25 0 15-11 27-27 27"/>
+          <path d="M31 61V25M31 44C17 46 13 35 13 29c11-1 18 5 18 15ZM32 35c0-12 9-18 19-18 0 11-6 19-19 18ZM31 26C21 23 20 13 24 6c8 3 13 11 7 20Z"/>
+          <path d="M23 58c5-3 11-3 16 0M26 62c3-2 7-2 10 0"/>
+        </g>
+      </symbol>
+      <symbol id="i-sprout" viewBox="0 0 40 48"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 45V18M20 34C7 35 4 24 5 18c10 0 15 5 15 16ZM20 25C20 13 28 9 36 9c1 9-5 16-16 16ZM20 18C12 15 12 6 16 2c7 4 9 10 4 16Z"/><path d="M9 45h22"/></g></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m6 18 12-12M6 6h12v12"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="2.5"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h3"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20 16 9M5 16C1 7 11 2 21 3c0 11-5 18-13 15"/><path d="m9 16 .5-6m3 2 5 .5"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 21v-9h3l.6-4H14V6c0-1 .5-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 2-5 5v2H7v4h3v9"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 40 40"><circle cx="20" cy="20" r="8"/><path d="M20 2v5m0 26v5M2 20h5m26 0h5M7 7l4 4m18 18 4 4M7 33l4-4m18-18 4-4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- 01. HEADER: troque o símbolo e a tipografia pelo logo oficial. -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Ecovila Sustentar, início">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-brand"></use></svg>
+        <span class="brand-wordmark"><span class="brand-prefix">Ecovila</span><span class="brand-name">Sustentar</span></span>
+      </a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#hospedagem">Hospedagem</a>
+        <a href="#voluntariado">Voluntariado</a>
+        <a href="#viver">Viver na Ecovila</a>
+        <a href="#sustentarte">SustentArte</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#blog">Blog</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="button header-visit" type="button" data-action="contact" data-kind="visit">Visite-nos<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <!-- 02. HERO: foto ilustrativa. Substitua o src por um registro da Ecovila. -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <figure class="hero-media">
+        <img src="https://images.pexels.com/photos/23857952/pexels-photo-23857952.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Imagem ilustrativa de uma floresta tropical entre montanhas e neblina. [Substituir por foto da Mata Atlântica na Ecovila.]" width="1200" height="627" fetchpriority="high">
+        <figcaption class="sr-only">[foto de capa: Mata Atlântica ao amanhecer] Fotografia ilustrativa, não é um registro da Ecovila.</figcaption>
+      </figure>
+      <div class="hero-content">
+        <svg class="hero-sprout" aria-hidden="true"><use href="#i-sprout"></use></svg>
+        <h1 class="hero-title" id="hero-title"><span class="hero-prefix">Ecovila</span><span class="hero-name">Sustentar</span></h1>
+        <div class="hero-phrase-wrap"><p class="hero-phrase" id="hero-phrase" aria-live="off">Hospede-se em meio à Mata Atlântica</p></div>
+        <p class="hero-description">Reconecte-se com a terra, com as pessoas e com você.</p>
+        <a class="button button-honey hero-cta" href="#experiencias">ESCOLHA SUA EXPERIÊNCIA<svg class="icon" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+        <div class="hero-controls">
+          <span class="hero-step active" aria-hidden="true"></span><span class="hero-step" aria-hidden="true"></span><span class="hero-step" aria-hidden="true"></span><span class="hero-step" aria-hidden="true"></span>
+          <button class="rotation-toggle" id="rotation-toggle" type="button" aria-label="Pausar frases" title="Pausar frases" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+        </div>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 65" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36C216 68 369 6 629 25s412 36 588 9c89-13 158-10 223-2v33H0Z" fill="currentColor"/></svg>
+    </section>
+
+    <!-- 03. SOBRE: apresentação e visão fornecidas pela Ecovila. -->
+    <section class="section-space about" id="sobre" aria-labelledby="about-title" tabindex="-1">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p class="eyebrow">Raízes na terra. Laços na vida.</p>
+            <h2 id="about-title">Uma comunidade sustentável em Embu-Guaçu</h2>
+            <p>A cerca de 1 hora de São Paulo, você encontra um outro ritmo. Em uma área de proteção de mananciais, dentro da reserva da Mata Atlântica, a Ecovila Sustentar está cultivando um jeito mais consciente de viver.</p>
+            <p>Aqui, você se aproxima dos ciclos da terra, aprende fazendo e fortalece vínculos. Cada encontro é um convite para cuidar do ambiente e construir, junto, uma comunidade em transformação.</p>
+            <button class="button" type="button" data-action="contact" data-kind="visit">Quero visitar<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </div>
+          <figure class="reveal" style="--reveal-delay:120ms">
+            <div class="photo-placeholder about-photo"><img src="https://images.pexels.com/photos/7728327/pexels-photo-7728327.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de duas pessoas sorrindo durante a colheita em uma horta." width="1200" height="627" loading="lazy" decoding="async"></div>
+            <figcaption class="about-caption"><span>[foto: pessoas da comunidade trabalhando e sorrindo na agrofloresta]</span><span>Imagem ilustrativa. Substituir por um registro da Ecovila.</span></figcaption>
+          </figure>
+        </div>
+        <div class="vision reveal">
+          <span class="vision-label">Nossa visão</span>
+          <p>Ser um espaço acolhedor e inspirador, reconhecido por conectar pessoas e ideias que transformam o mundo por meio da sustentabilidade, da regeneração ambiental e da vida comunitária.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. DESCUBRA: os botões abrem os textos editáveis em PROJECTS, no JS. -->
+    <section class="section-space discover" id="projetos" aria-labelledby="discover-title" tabindex="-1">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div><p class="eyebrow">O que cultivamos por aqui</p><h2 id="discover-title">Descubra a Ecovila</h2></div>
+          <p>Diferentes caminhos, um mesmo propósito: cuidar da vida em todas as suas formas.</p>
+        </div>
+        <div class="discover-grid">
+          <article class="discovery-item reveal">
+            <figure><div class="photo-placeholder discovery-image"><img src="https://images.pexels.com/photos/7475178/pexels-photo-7475178.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Imagem ilustrativa de mãos segurando pequenas mudas para o plantio." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: voluntários na agrofloresta]</figcaption></figure>
+            <h3>Agrofloresta</h3><p>Você aprende com a terra e participa do cuidado que regenera.</p>
+            <button class="text-link" type="button" data-action="project" data-key="agrofloresta" aria-label="Saiba mais sobre Agrofloresta">Saiba mais<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+          <article class="discovery-item reveal" style="--reveal-delay:60ms">
+            <figure><div class="photo-placeholder discovery-image"><img src="https://images.pexels.com/photos/4247129/pexels-photo-4247129.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Imagem ilustrativa de uma pessoa com proteção de apicultura observando um favo com abelhas." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: cuidado com as abelhas]</figcaption></figure>
+            <h3>Apicultura e Meliponicultura</h3><p>Um olhar atento para as abelhas e sua conexão com a biodiversidade.</p>
+            <button class="text-link" type="button" data-action="project" data-key="abelhas" aria-label="Saiba mais sobre Apicultura e Meliponicultura">Saiba mais<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+          <article class="discovery-item reveal" style="--reveal-delay:120ms">
+            <figure><div class="photo-placeholder discovery-image"><img src="https://images.pexels.com/photos/7728350/pexels-photo-7728350.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Imagem ilustrativa de duas pessoas aprendendo juntas durante o cultivo de mudas." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: aprendizado com as mãos na terra]</figcaption></figure>
+            <h3>Vivências Ecopedagógicas</h3><p>Natureza, curiosidade e trocas para aprender além da teoria.</p>
+            <button class="text-link" type="button" data-action="project" data-key="vivencias" aria-label="Saiba mais sobre Vivências Ecopedagógicas">Saiba mais<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+          <article class="discovery-item reveal" style="--reveal-delay:180ms">
+            <figure><div class="photo-placeholder discovery-image"><img src="https://images.pexels.com/photos/4920254/pexels-photo-4920254.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Imagem ilustrativa de duas pessoas trabalhando juntas no cuidado de um jardim." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: cuidado compartilhado na comunidade]</figcaption></figure>
+            <h3>Vida em Comunidade</h3><p>Você compartilha saberes, responsabilidades e novos jeitos de conviver.</p>
+            <button class="text-link" type="button" data-action="project" data-key="comunidade" aria-label="Saiba mais sobre Vida em Comunidade">Saiba mais<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+          <article class="discovery-item reveal" style="--reveal-delay:240ms">
+            <figure><div class="photo-placeholder discovery-image"><img src="https://images.pexels.com/photos/23857952/pexels-photo-23857952.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Imagem ilustrativa de uma floresta tropical, com vegetação densa e neblina." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: Mata Atlântica e seus mananciais]</figcaption></figure>
+            <h3>Mata Atlântica e Mananciais</h3><p>Reconecte-se com a floresta e com o cuidado essencial com a água.</p>
+            <button class="text-link" type="button" data-action="project" data-key="mata" aria-label="Saiba mais sobre Mata Atlântica e Mananciais">Saiba mais<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. NÚMEROS: preencha data-value apenas com números confirmados. -->
+    <section class="impact" id="impacto" aria-label="A Ecovila em números: dados a confirmar">
+      <div class="container">
+        <div class="impact-grid">
+          <div class="impact-item" style="--delay:0s"><strong class="counter" data-value="" data-format="year" data-placeholder="[ano]">[ano]</strong><span class="counter-label">fundação</span></div>
+          <div class="impact-item" style="--delay:.1s"><strong class="counter" data-value="" data-prefix="+" data-placeholder="[+00]">[+00]</strong><span class="counter-label">voluntários recebidos</span></div>
+          <div class="impact-item" style="--delay:.2s"><strong class="counter" data-value="" data-placeholder="[00]">[00]</strong><span class="counter-label">moradores</span></div>
+          <div class="impact-item" style="--delay:.3s"><strong class="counter" data-value="" data-placeholder="[00]">[00]</strong><span class="counter-label">hectares de Mata Atlântica</span></div>
+          <div class="impact-item" style="--delay:.4s"><strong class="counter" data-value="" data-placeholder="[00]">[00]</strong><span class="counter-label">árvores plantadas</span></div>
+        </div>
+        <p class="data-note">[Indicadores a confirmar] Cada número será preenchido com a história real da Ecovila.</p>
+      </div>
+    </section>
+
+    <!-- 06. EXPERIÊNCIAS: fotos provisórias, informações fornecidas no briefing. -->
+    <section class="section-space experiences" id="experiencias" aria-labelledby="experiences-title" tabindex="-1">
+      <div class="container">
+        <div class="section-heading centered reveal"><p class="eyebrow">Há um caminho para você</p><h2 id="experiences-title">Nossas Experiências</h2><p>Venha por alguns dias. Leve um novo olhar para a vida.</p></div>
+        <article class="experience" id="voluntariado" tabindex="-1">
+          <figure class="reveal"><div class="photo-placeholder experience-image"><img src="https://images.pexels.com/photos/7728350/pexels-photo-7728350.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de pessoas cultivando mudas juntas em uma horta." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: voluntários compartilhando um dia de manejo agroecológico]</figcaption></figure>
+          <div class="experience-copy reveal"><p class="experience-tag">15 a 30 dias · Para aprender fazendo</p><h3>Voluntariado</h3><p>Coloque as mãos na terra e faça parte do cotidiano da Ecovila. Você contribui com os manejos agroecológicos e a manutenção da comunidade, enquanto compartilha saberes e experiências.</p><p class="experience-detail">Camping sem custo, com 4 horas diárias de trabalho.</p><button class="button button-outline" type="button" data-action="contact" data-kind="volunteer">Quero ser voluntário<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button></div>
+        </article>
+        <article class="experience" id="hospedagem" tabindex="-1">
+          <figure class="reveal"><div class="photo-placeholder experience-image"><img src="https://images.pexels.com/photos/33123147/pexels-photo-33123147.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de pequenas construções de madeira entre árvores. Não representa as acomodações da Ecovila." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: espaço real de hospedagem da Ecovila em meio à natureza]</figcaption></figure>
+          <div class="experience-copy reveal"><p class="experience-tag">No seu tempo · Para desacelerar</p><h3>Hospedagem</h3><p>Troque a pressa por dias de reconexão. Você encontra conforto simples, práticas sustentáveis e a oportunidade de se aproximar da natureza e de um outro ritmo de vida.</p><p class="experience-detail">[Acomodações, disponibilidade e valores a confirmar]</p><button class="button button-outline" type="button" data-action="contact" data-kind="stay">Planejar minha estadia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button></div>
+        </article>
+        <article class="experience" id="viver" tabindex="-1">
+          <figure class="reveal"><div class="photo-placeholder experience-image"><img src="https://images.pexels.com/photos/4920254/pexels-photo-4920254.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de pessoas dividindo o cuidado com as plantas em um jardim." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: moradores compartilhando o cuidado com os espaços da comunidade]</figcaption></figure>
+          <div class="experience-copy reveal"><p class="experience-tag">Um novo ciclo · Para construir junto</p><h3>Transição para a Ecovila</h3><p>E se o seu próximo passo fosse uma vida com mais simplicidade e presença? Conheça o caminho para viver em comunidade, com corresponsabilidade, escuta e aprendizado coletivo.</p><p class="experience-detail">[Etapas e condições do processo de transição]</p><button class="button button-outline" type="button" data-action="contact" data-kind="move">Conhecer a transição<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button></div>
+        </article>
+        <article class="experience" id="experiencia-festival">
+          <figure class="reveal"><div class="photo-placeholder experience-image"><img src="https://images.pexels.com/photos/17373844/pexels-photo-17373844.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de pessoas reunidas em um festival ao ar livre no fim da tarde. Não é um registro do SustentArte." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: encontros, arte e celebração no Festival SustentArte]</figcaption></figure>
+          <div class="experience-copy reveal"><p class="experience-tag">Encontro anual · Para celebrar a vida</p><h3>Festival SustentArte</h3><p>Você é parte dessa celebração. Um encontro entre arte e sustentabilidade para se inspirar, fortalecer conexões e experimentar a potência da vida em comunidade.</p><p class="experience-detail">Evento com venda de ingressos.</p><a class="button button-outline" href="#sustentarte">Conhecer o festival<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 07. DEPOIMENTOS: substitua os três itens de TESTIMONIALS no JS. -->
+    <section class="section-space testimonials" aria-labelledby="testimonials-title">
+      <div class="container reveal">
+        <div class="section-heading centered"><p class="eyebrow">De quem passou por aqui</p><h2 id="testimonials-title">Histórias que criam raízes</h2></div>
+        <div class="rating-strip" aria-label="Avaliações de demonstração, nota e quantidade a confirmar"><span class="stars" aria-hidden="true">★★★★★</span><span>[nota] · [número] avaliações</span></div>
+        <div class="testimonial-carousel" id="testimonial-carousel" role="region" aria-roledescription="carrossel" aria-label="Depoimentos de voluntários e hóspedes" tabindex="0">
+          <svg class="quote-mark" viewBox="0 0 40 32" aria-hidden="true"><path d="M2 30V17C2 7 7 2 17 1v6C11 8 9 12 9 16h8v14Zm22 0V17C24 7 29 2 39 1v6c-6 1-8 5-8 9h8v14Z" fill="currentColor"/></svg>
+          <div class="testimonial-slide" id="testimonial-slide" aria-live="polite" aria-atomic="true" role="group" aria-roledescription="slide" aria-label="1 de 3">
+            <blockquote class="testimonial-quote" id="testimonial-quote">[Depoimento de uma pessoa voluntária sobre o aprendizado coletivo e a reconexão com a terra.]</blockquote>
+            <p class="testimonial-author" id="testimonial-author">[nome da pessoa voluntária]</p><p class="testimonial-role" id="testimonial-role">Voluntariado · [período da vivência]</p>
+          </div>
+          <div class="carousel-controls">
+            <button class="circle-button" id="testimonial-prev" type="button" aria-label="Depoimento anterior"><svg class="icon" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow"></use></svg></button>
+            <div class="carousel-dots" aria-label="Escolher depoimento"><button class="carousel-dot" type="button" data-slide="0" aria-label="Mostrar depoimento 1" aria-current="true"></button><button class="carousel-dot" type="button" data-slide="1" aria-label="Mostrar depoimento 2" aria-current="false"></button><button class="carousel-dot" type="button" data-slide="2" aria-label="Mostrar depoimento 3" aria-current="false"></button></div>
+            <button class="circle-button" id="testimonial-next" type="button" aria-label="Próximo depoimento"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </div>
+        </div>
+        <p class="placeholder-note">Espaço reservado para relatos reais, publicados com autorização.</p>
+      </div>
+    </section>
+
+    <!-- 08. SUSTENTARTE: configure data, arte e venda de ingressos antes de publicar. -->
+    <section class="section-space festival" id="sustentarte" aria-labelledby="festival-title" tabindex="-1">
+      <div class="container festival-grid">
+        <div class="festival-copy reveal">
+          <p class="eyebrow">Arte, natureza e encontros</p>
+          <h2 class="festival-title" id="festival-title">Sustent<em>Arte</em></h2>
+          <p>Quando a arte encontra a sustentabilidade, a vida floresce. Venha celebrar e se inspirar no festival anual da Ecovila Sustentar.</p>
+          <div class="festival-date"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-festival-date>[data da próxima edição]</span></div>
+          <button class="button" type="button" data-action="tickets">Comprar ingresso<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button>
+        </div>
+        <figure class="festival-art reveal" style="--reveal-delay:100ms">
+          <svg viewBox="0 0 440 410" role="img" aria-label="[Arte provisória do SustentArte: um sol dourado, folhas, flores e raízes em tons naturais.]">
+            <defs><linearGradient id="art-earth" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e5c49c"/><stop offset="1" stop-color="#dfab8a"/></linearGradient></defs>
+            <path d="M62 204C62 94 127 30 220 30s158 64 158 174v156H62Z" fill="url(#art-earth)"/>
+            <circle cx="219" cy="155" r="67" fill="#eac46e"/>
+            <g fill="none" stroke="#936148" stroke-width="1.2" opacity=".75"><path d="M219 61V42m-39 27-7-17m-28 37-14-14m-10 49-19-7m156-48 7-17m28 37 14-14m10 49 19-7"/><path d="M72 337c62-33 101-19 151 2s106 20 147-4M71 349c56-26 99-17 147 3s104 18 153-4"/></g>
+            <path d="M90 360c15-42 17-84 3-132 33 24 47 56 42 86 9-42 26-64 56-84-3 47-18 80-49 103l-4 27Z" fill="#69764f"/>
+            <path d="M259 360c-5-62 17-110 67-140-3 42-18 74-53 93 28-8 53-4 76 12-24 19-51 23-77 13v22Z" fill="#3c5740"/>
+            <g fill="none" stroke="#2c4835" stroke-width="2" stroke-linecap="round"><path d="M219 367V164m0 54-34-32m34 63 35-39m-35 79-43-35m43 64 38-34m-38 83-18 17m18-17 18 17m-18-17v21"/></g>
+            <g fill="#476346"><path d="M219 193c-29-4-46-26-44-53 28 7 44 22 44 53Z"/><path d="M220 218c1-34 23-52 48-51-3 30-19 49-48 51Z"/><path d="M212 258c-34 1-57-19-59-46 32 1 52 17 59 46Z"/><path d="M224 290c2-34 24-55 57-55-4 35-26 54-57 55Z"/></g>
+            <g fill="none" stroke="#d8d7ac" stroke-width="1"><path d="m183 152 29 32m17 24 29-31m-93 47 35 26m35 30 34-33"/></g>
+            <g fill="#b66b4e"><circle cx="135" cy="201" r="10"/><circle cx="113" cy="205" r="10"/><circle cx="119" cy="184" r="10"/><circle cx="139" cy="182" r="10"/><circle cx="150" cy="196" r="10"/></g><circle cx="131" cy="195" r="7" fill="#e8c677"/>
+            <g fill="none" stroke="#735945" stroke-width="1.5" stroke-linecap="round"><path d="M318 150c-15-12-26-5-14 7m14-7c-3-20 11-24 12-4"/><ellipse cx="323" cy="156" rx="12" ry="6" transform="rotate(24 323 156)"/><path d="m320 151-4 8m10-6-4 9m15-2 5 1"/></g>
+            <path d="M77 366h286" stroke="#936148" stroke-width="1"/>
+          </svg>
+          <figcaption>[arte da próxima edição do Festival SustentArte]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 09. PARCEIROS: logos e nomes explicitamente provisórios. -->
+    <section class="partners" aria-labelledby="partners-title">
+      <div class="container reveal"><h2 id="partners-title">Nossos Parceiros</h2>
+        <div class="partners-grid">
+          <div class="partner" role="img" aria-label="[logo do parceiro 01]"><svg class="icon" aria-hidden="true" viewBox="0 0 40 40"><use href="#i-sun"></use></svg><span>[logo do parceiro 01]</span></div>
+          <div class="partner" role="img" aria-label="[logo do parceiro 02]"><svg aria-hidden="true"><use href="#i-brand"></use></svg><span>[logo do parceiro 02]</span></div>
+          <div class="partner" role="img" aria-label="[logo do parceiro 03]"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-leaf"></use></svg><span>[logo do parceiro 03]</span></div>
+          <div class="partner" role="img" aria-label="[logo do parceiro 04]"><svg aria-hidden="true"><use href="#i-sprout"></use></svg><span>[logo do parceiro 04]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. BLOG: títulos, resumos e datas são espaços reservados. -->
+    <section class="section-space blog" id="blog" aria-labelledby="blog-title" tabindex="-1">
+      <div class="container">
+        <div class="section-heading split-heading reveal"><div><p class="eyebrow">Histórias e saberes que circulam</p><h2 id="blog-title">Ecos da Vila</h2></div><p>Reflexões, aprendizados e um pouco da vida que acontece por aqui.</p></div>
+        <div class="blog-grid">
+          <article class="blog-card reveal">
+            <figure><div class="photo-placeholder blog-image"><img src="https://images.pexels.com/photos/7475178/pexels-photo-7475178.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de mãos segurando mudas, pronta para ser substituída pela imagem do artigo." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: plantio e regeneração na agrofloresta]</figcaption></figure>
+            <div class="blog-meta"><span>Agrofloresta</span><span>[data de publicação]</span></div><h3>[Da semente à floresta: caminhos de regeneração]</h3><p>[Resumo de um artigo sobre o cuidado com a terra e o aprendizado agroflorestal.]</p>
+            <button class="text-link" type="button" data-action="article" data-index="0" aria-label="Ler o artigo demonstrativo sobre agrofloresta">Ler história<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+          <article class="blog-card reveal" style="--reveal-delay:100ms">
+            <figure><div class="photo-placeholder blog-image"><img src="https://images.pexels.com/photos/7728327/pexels-photo-7728327.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de pessoas sorrindo durante uma colheita coletiva." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: encontros e aprendizados em comunidade]</figcaption></figure>
+            <div class="blog-meta"><span>Vida em comunidade</span><span>[data de publicação]</span></div><h3>[O que aprendemos quando escolhemos viver juntos]</h3><p>[Resumo de um artigo sobre escuta, corresponsabilidade e vínculos comunitários.]</p>
+            <button class="text-link" type="button" data-action="article" data-index="1" aria-label="Ler o artigo demonstrativo sobre vida em comunidade">Ler história<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+          <article class="blog-card reveal" style="--reveal-delay:200ms">
+            <figure><div class="photo-placeholder blog-image"><img src="https://images.pexels.com/photos/4247129/pexels-photo-4247129.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fotografia ilustrativa de uma pessoa cuidando de uma colmeia com equipamentos de proteção." width="1200" height="627" loading="lazy" decoding="async"></div><figcaption>[foto: abelhas e o cuidado com a biodiversidade]</figcaption></figure>
+            <div class="blog-meta"><span>Biodiversidade</span><span>[data de publicação]</span></div><h3>[Pequenas abelhas, grandes conexões com a vida]</h3><p>[Resumo de um artigo sobre apicultura, meliponicultura e cuidado ambiental.]</p>
+            <button class="text-link" type="button" data-action="article" data-index="2" aria-label="Ler o artigo demonstrativo sobre abelhas">Ler história<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          </article>
+        </div>
+        <div class="newsletter reveal">
+          <div class="newsletter-copy"><h3>Deixe os Ecos da Vila chegarem até você.</h3><p>Histórias e novidades para cultivar essa conexão.</p></div>
+          <form id="newsletter-form" aria-label="Inscrição na newsletter Ecos da Vila">
+            <label class="sr-only" for="newsletter-email">Seu e-mail</label>
+            <div class="newsletter-fields"><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Seu melhor e-mail" maxlength="254" required aria-describedby="newsletter-note"><button class="button" type="submit">Inscrever<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button></div>
+            <p class="form-note" id="newsletter-note">Demonstração: nenhum dado será enviado ou armazenado. [Integração da newsletter]</p>
+            <p class="form-status" id="newsletter-status" role="status" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. ONDE ESTAMOS: endereço informado. O link consulta a rota por endereço. -->
+    <section class="section-space location" id="contato" aria-labelledby="location-title" tabindex="-1">
+      <div class="container location-grid">
+        <div class="location-copy reveal"><p class="eyebrow">Perto da cidade. No tempo da natureza.</p><h2 id="location-title">Onde estamos</h2><p>Seu encontro com a Mata Atlântica está a cerca de 1 hora de São Paulo, em Embu-Guaçu. Combine sua visita e venha conhecer esse lugar com a gente.</p><address>Estrada do Celi, 1800, Vale Florido<br>Embu-Guaçu, SP<br>CEP 06921-405</address><a class="button button-outline" href="https://www.google.com/maps/dir/?api=1&destination=Estrada%20do%20Celi%2C%201800%2C%20Vale%20Florido%2C%20Embu-Gua%C3%A7u%2C%20SP%2C%2006921-405" target="_blank" rel="noopener noreferrer" aria-label="Traçar minha rota no Google Maps, abre em uma nova aba">Traçar minha rota<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a></div>
+        <figure class="reveal"><div class="map-placeholder" role="img" aria-label="[Espaço reservado para o mapa da Ecovila. Desenho ilustrativo, sem coordenadas reais.]"><svg class="map-drawing" viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="380" fill="#e2e6d7"/><g fill="#c8d4b8" opacity=".68"><path d="M0 0h231c-40 56-28 75-68 103S68 93 0 151ZM374 0h226v127c-39-18-70-23-116-22S411 72 374 0ZM0 298c78-39 152-28 207 82H0ZM397 246c72-21 126 13 203-17v151H371c37-42 58-78 26-134Z"/></g><path d="M-20 228C61 204 114 236 155 184S224 137 275 163s100 60 125-4 93-62 220-116" fill="none" stroke="#f5f4e9" stroke-width="17"/><path d="M148-20c19 62 83 86 109 139s12 97 34 142 97 71 95 139" fill="none" stroke="#f5f4e9" stroke-width="10"/><path d="M-20 85c75 78 65 150 96 187s90 74 101 128" fill="none" stroke="#b6cac1" stroke-width="8"/><path d="M434-10c-3 102 37 139 80 164s11 114 62 151" fill="none" stroke="#c1ccaf" stroke-width="2" stroke-dasharray="5 5"/></svg><div class="map-label"><span class="map-pin"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg></span><strong>Ecovila Sustentar</strong><p>[mapa da Ecovila]</p></div></div><figcaption>[Inserir mapa com a localização confirmada] Representação ilustrativa.</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. RODAPÉ: links sociais e WhatsApp são configurados no objeto CONFIG. -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="brand" href="#inicio" aria-label="Ecovila Sustentar, voltar ao início"><svg class="brand-mark" aria-hidden="true"><use href="#i-brand"></use></svg><span class="brand-wordmark"><span class="brand-prefix">Ecovila</span><span class="brand-name">Sustentar</span></span></a><p>Cultivando a terra, os encontros e um jeito mais consciente de viver.</p></div>
+        <div><h3 class="footer-heading">Explore a Ecovila</h3><div class="footer-links"><a href="#sobre">Nossa comunidade</a><a href="#experiencias">Nossas experiências</a><a href="#projetos">Projetos e vivências</a><a href="#sustentarte">Festival SustentArte</a><a href="#blog">Ecos da Vila</a></div></div>
+        <div><h3 class="footer-heading">Vamos nos conectar</h3><div class="footer-links"><button type="button" data-action="social" data-network="instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg>Instagram</button><button type="button" data-action="social" data-network="facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg>Facebook</button><button type="button" data-action="whatsapp"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>Fale com a gente</button></div></div>
+        <div class="footer-contact"><h3 class="footer-heading">Nosso cantinho</h3><div class="footer-links"><a href="mailto:ecovilasustentar@gmail.com">ecovilasustentar@gmail.com</a></div><address>Estrada do Celi, 1800, Vale Florido<br>Embu-Guaçu, SP · 06921-405</address><div class="footer-links"><button type="button" data-action="social" data-network="instagram">@ecovilasustentar</button></div></div>
+      </div>
+      <div class="footer-bottom"><p>Ecovila Sustentar · Regeneração, comunidade e aprendizado coletivo.<br>Demo institucional. Imagens ilustrativas; campos entre colchetes aguardam confirmação.</p><button type="button" data-action="demo">Sobre esta demonstração</button></div>
+    </div>
+  </footer>
+
+  <button class="whatsapp-float" id="whatsapp-float" type="button" data-action="whatsapp" aria-label="Conversar pelo WhatsApp. [Número a configurar]" title="Converse com a gente">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M26.8 15.6a10.8 10.8 0 0 1-16 9.5L5 27l1.9-5.5a10.8 10.8 0 1 1 19.9-5.9Z" stroke="currentColor" stroke-width="1.7"/><path d="m12.2 9.7-1.7.2c-.7.1-1.1 1.2-1.1 2.3 0 4 5.1 9.1 9.2 9.1 1.1 0 2.2-.5 2.3-1.2l.2-1.6-3.3-1.5-1.1 1.2c-1.9-.9-3.1-2.1-4-4l1.1-1.2-1.6-3.3Z" fill="currentColor"/></svg>
+  </button>
+
+  <!-- DIÁLOGOS: título acessível, foco nativo e fechamento pela tecla Escape. -->
+  <dialog class="site-dialog" id="site-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Fechar janela"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <template id="info-template">
+    <p class="eyebrow" data-info-eyebrow></p><h2 id="dialog-title" tabindex="-1"></h2><div class="dialog-body" data-info-body></div><dl class="dialog-details" data-info-details hidden></dl><div class="dialog-actions" data-info-actions><button class="button" type="button" data-info-button></button></div>
+  </template>
+
+  <template id="contact-template">
+    <p class="eyebrow">Seu próximo encontro começa aqui</p><h2 id="dialog-title" tabindex="-1">Vamos conversar?</h2><p class="dialog-intro" id="contact-intro"></p>
+    <form class="contact-form" id="contact-form">
+      <div class="form-row"><div class="field"><label for="contact-name">Seu nome *</label><input id="contact-name" name="name" autocomplete="name" maxlength="100" required></div><div class="field"><label for="contact-email">Seu e-mail *</label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required></div></div>
+      <div class="field"><label for="contact-interest">O que você gostaria de conhecer? *</label><select id="contact-interest" name="interest" required><option value="visit">Visitar a Ecovila</option><option value="volunteer">Voluntariado</option><option value="stay">Hospedagem</option><option value="move">Transição para a Ecovila</option><option value="festival">Festival SustentArte</option></select></div>
+      <div class="field"><label for="contact-period">Período de interesse (opcional)</label><input id="contact-period" name="period" placeholder="[datas ou período desejado]" maxlength="150"></div>
+      <div class="field"><label for="contact-message">Conte um pouco sobre você (opcional)</label><textarea id="contact-message" name="message" rows="3" maxlength="1500"></textarea></div>
+      <button class="button" type="submit">Preparar e-mail<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button><p class="form-note">Você poderá revisar a mensagem antes de abrir seu aplicativo de e-mail. Nenhum dado é enviado ou armazenado por este site.</p>
+    </form>
+    <div class="email-preview" id="email-preview" hidden><h3 id="preview-title" tabindex="-1">Sua mensagem está pronta.</h3><p>Nada foi enviado ainda. Abra seu aplicativo de e-mail para concluir o envio para <strong>ecovilasustentar@gmail.com</strong>.</p><div class="email-summary" id="email-summary"></div><div class="email-preview-actions"><a class="button" id="email-send" href="mailto:ecovilasustentar@gmail.com">Abrir meu e-mail<svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a><button class="text-link" id="email-edit" type="button">Editar mensagem</button></div><p>Se você não usa um aplicativo de e-mail, copie a mensagem acima e envie pelo seu serviço de preferência.</p></div>
+  </template>
+
+  <noscript><p style="padding:20px;text-align:center;background:#e5be70;color:#203d2d">Para usar o menu mobile, os formulários e os carrosséis, ative o JavaScript. Você também pode falar com a Ecovila por <a href="mailto:ecovilasustentar@gmail.com" style="text-decoration:underline">ecovilasustentar@gmail.com</a>.</p></noscript>
+
+  <script>
+    'use strict';
+
+    /* 01. CONFIGURAÇÃO: busque por "[" para localizar os espaços reservados.
+       Use URLs https. O WhatsApp deve incluir o código do país e o DDD.
+       No Brasil: 55 + DDD + número confirmado, sem zero de operadora. */
+    const CONFIG = {
+      email: 'ecovilasustentar@gmail.com',
+      instagram: '[link do Instagram]',
+      facebook: '[link do Facebook]',
+      whatsapp: '[número do WhatsApp]',
+      tickets: '[link de venda de ingressos]',
+      festivalDate: '[data da próxima edição]'
+    };
+
+    const HERO_PHRASES = [
+      'Hospede-se em meio à Mata Atlântica',
+      'Aprenda com as mãos na terra',
+      'Viva em comunidade',
+      'Celebre a arte e a sustentabilidade'
+    ];
+
+    const PROJECTS = {
+      agrofloresta: {
+        title: 'Agrofloresta',
+        paragraphs: ['Na Ecovila Sustentar, a agrofloresta faz parte do cuidado com a terra. Você se aproxima dos ciclos naturais e do aprendizado coletivo nos manejos agroecológicos.', 'No voluntariado, você pode contribuir com esses manejos e com a manutenção da comunidade. São 4 horas diárias de trabalho, em uma vivência de 15 a 30 dias, com camping sem custo.'],
+        details: [['Próximas atividades', '[calendário de manejos e vivências]']]
+      },
+      abelhas: {
+        title: 'Apicultura e Meliponicultura',
+        paragraphs: ['O trabalho com apicultura e meliponicultura faz parte da Ecovila Sustentar. É um convite para você se aproximar das abelhas e refletir sobre o cuidado com o ambiente.', 'Converse com a comunidade para conhecer as possibilidades de vivência e as orientações de segurança.'],
+        details: [['Atividades e orientações', '[programação e condições de participação]']]
+      },
+      vivencias: {
+        title: 'Vivências Ecopedagógicas',
+        paragraphs: ['Você aprende quando observa, participa e compartilha. As vivências ecopedagógicas da Ecovila promovem a reconexão com os ciclos da terra, o cuidado ambiental e os vínculos comunitários.'],
+        details: [['Programação', '[temas, datas e públicos das próximas vivências]']]
+      },
+      comunidade: {
+        title: 'Vida em Comunidade',
+        paragraphs: ['Viver junto é um aprendizado contínuo. Na Ecovila Sustentar, o convite é construir uma vida com simplicidade, corresponsabilidade e cuidado com o ambiente.', 'Se você deseja conhecer o processo de transição para morar na Ecovila, o primeiro passo é conversar com a comunidade.'],
+        details: [['Processo de transição', '[etapas e condições a confirmar]']]
+      },
+      mata: {
+        title: 'Mata Atlântica e Mananciais',
+        paragraphs: ['Você encontra a Ecovila Sustentar em Embu-Guaçu, em uma área de proteção de mananciais dentro da reserva da Mata Atlântica, a cerca de 1 hora de São Paulo.', 'Estar aqui é um convite para reconhecer os ciclos da terra e assumir, junto, o cuidado com a natureza.'],
+        details: [['Orientações para visitantes', '[orientações de cuidado com a área protegida]']]
+      }
+    };
+
+    const EXPERIENCES = {
+      visit: { title: 'Venha conhecer a Ecovila', label: 'Visitar a Ecovila', intro: 'Conte o que você procura e combine sua visita com a comunidade. Estamos em Embu-Guaçu, a cerca de 1 hora de São Paulo.' },
+      volunteer: { title: 'Seu tempo pode cultivar mudanças', label: 'Voluntariado', intro: 'A vivência dura de 15 a 30 dias, com camping sem custo e 4 horas diárias de trabalho nos manejos agroecológicos e na manutenção da comunidade. Consulte as condições e a disponibilidade.' },
+      stay: { title: 'Planeje seus dias de reconexão', label: 'Hospedagem', intro: 'Conforto simples, práticas sustentáveis e proximidade com a natureza. Converse com a Ecovila sobre [acomodações, disponibilidade e valores].' },
+      move: { title: 'Um novo jeito de viver, juntos', label: 'Transição para a Ecovila', intro: 'Compartilhe suas motivações e conheça o caminho para viver em comunidade. [Etapas, prazos e condições do processo de transição a confirmar.]' },
+      festival: { title: 'Encontre a gente no SustentArte', label: 'Festival SustentArte', intro: 'Pergunte sobre a próxima edição do festival anual de arte e sustentabilidade. [Data, programação e valores dos ingressos a confirmar.]' }
+    };
+
+    const TESTIMONIALS = [
+      { quote: '[Depoimento de uma pessoa voluntária sobre o aprendizado coletivo e a reconexão com a terra.]', author: '[nome da pessoa voluntária]', role: 'Voluntariado · [período da vivência]' },
+      { quote: '[Depoimento de uma pessoa hóspede sobre seus dias de descanso, natureza e reconexão na Ecovila.]', author: '[nome da pessoa hóspede]', role: 'Hospedagem · [período da estadia]' },
+      { quote: '[Depoimento de uma pessoa voluntária sobre o cuidado compartilhado e os vínculos construídos na comunidade.]', author: '[nome da pessoa voluntária]', role: 'Voluntariado · [período da vivência]' }
+    ];
+
+    const ARTICLES = [
+      { title: '[Da semente à floresta: caminhos de regeneração]', category: 'Agrofloresta', text: '[Texto do artigo sobre as experiências de agrofloresta, o cuidado com o solo e os aprendizados do manejo coletivo.]' },
+      { title: '[O que aprendemos quando escolhemos viver juntos]', category: 'Vida em comunidade', text: '[Texto do artigo sobre escuta, corresponsabilidade e os aprendizados cotidianos da vida em comunidade.]' },
+      { title: '[Pequenas abelhas, grandes conexões com a vida]', category: 'Biodiversidade', text: '[Texto do artigo sobre apicultura, meliponicultura e as relações entre abelhas, floresta e cuidado ambiental.]' }
+    ];
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $$('[data-festival-date]').forEach(element => { element.textContent = CONFIG.festivalDate; });
+
+    /* 02. Menu: estado, Escape, foco e bloqueio do conteúdo coberto. */
+    const menuButton = $('#menu-toggle');
+    const navigation = $('#primary-nav');
+    const siteHeader = $('#site-header');
+    const mobileLayout = window.matchMedia('(max-width: 1199px)');
+    const pageRegions = [$('#conteudo'), $('#site-footer'), $('#whatsapp-float')];
+    let menuOpen = false;
+
+    function setMenu(open, returnFocus = false) {
+      menuOpen = open;
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      navigation.classList.toggle('is-open', open);
+      document.body.classList.toggle('menu-open', open);
+      pageRegions.forEach(region => { region.inert = open; });
+      if (open) $('a', navigation).focus();
+      else if (returnFocus) menuButton.focus();
+    }
+
+    menuButton.addEventListener('click', () => setMenu(!menuOpen));
+    $$('.primary-nav a, .site-header .brand').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    mobileLayout.addEventListener('change', () => setMenu(false));
+    document.addEventListener('keydown', event => {
+      if (!menuOpen) return;
+      if (event.key === 'Escape') { event.preventDefault(); setMenu(false, true); }
+      if (event.key === 'Tab') {
+        const focusable = $$('a[href], button:not([disabled])', siteHeader).filter(element => element.getClientRects().length);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    });
+
+    let scrollScheduled = false;
+    function updateHeader() {
+      siteHeader.classList.toggle('is-scrolled', window.scrollY > 12);
+      scrollScheduled = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!scrollScheduled) { scrollScheduled = true; requestAnimationFrame(updateHeader); }
+    }, { passive: true });
+    updateHeader();
+
+    /* 03. Frases: ciclo de 4 segundos, pausa e respeito a movimento reduzido. */
+    const heroPhrase = $('#hero-phrase');
+    const heroSteps = $$('.hero-step');
+    const rotationButton = $('#rotation-toggle');
+    let phraseIndex = 0;
+    let phraseInterval;
+    let phraseTransition;
+    let userPaused = reducedMotion.matches;
+
+    function updateRotationControl() {
+      const label = userPaused ? 'Reproduzir frases' : 'Pausar frases';
+      rotationButton.setAttribute('aria-label', label);
+      rotationButton.setAttribute('title', label);
+      rotationButton.setAttribute('aria-pressed', String(userPaused));
+      $('use', rotationButton).setAttribute('href', userPaused ? '#i-play' : '#i-pause');
+    }
+
+    function stopRotation() {
+      clearInterval(phraseInterval);
+      clearTimeout(phraseTransition);
+      heroPhrase.classList.remove('is-changing');
+    }
+
+    function startRotation() {
+      stopRotation();
+      if (userPaused || document.hidden) return;
+      phraseInterval = setInterval(() => {
+        heroPhrase.classList.add('is-changing');
+        phraseTransition = setTimeout(() => {
+          phraseIndex = (phraseIndex + 1) % HERO_PHRASES.length;
+          heroPhrase.textContent = HERO_PHRASES[phraseIndex];
+          heroSteps.forEach((step, index) => step.classList.toggle('active', index === phraseIndex));
+          heroPhrase.classList.remove('is-changing');
+        }, reducedMotion.matches ? 0 : 300);
+      }, 4000);
+    }
+
+    rotationButton.addEventListener('click', () => {
+      userPaused = !userPaused;
+      updateRotationControl();
+      startRotation();
+    });
+    document.addEventListener('visibilitychange', startRotation);
+    reducedMotion.addEventListener('change', () => {
+      userPaused = reducedMotion.matches;
+      updateRotationControl();
+      startRotation();
+    });
+    updateRotationControl();
+    startRotation();
+
+    /* 04. Carrossel: setas, pontos, teclado e gesto horizontal no celular. */
+    const carousel = $('#testimonial-carousel');
+    const testimonialSlide = $('#testimonial-slide');
+    const carouselDots = $$('.carousel-dot');
+    let testimonialIndex = 0;
+    let testimonialTimeout;
+
+    function showTestimonial(index) {
+      testimonialIndex = (index + TESTIMONIALS.length) % TESTIMONIALS.length;
+      clearTimeout(testimonialTimeout);
+      testimonialSlide.classList.add('is-changing');
+      testimonialTimeout = setTimeout(() => {
+        const item = TESTIMONIALS[testimonialIndex];
+        $('#testimonial-quote').textContent = item.quote;
+        $('#testimonial-author').textContent = item.author;
+        $('#testimonial-role').textContent = item.role;
+        testimonialSlide.setAttribute('aria-label', `${testimonialIndex + 1} de ${TESTIMONIALS.length}`);
+        carouselDots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === testimonialIndex)));
+        testimonialSlide.classList.remove('is-changing');
+      }, reducedMotion.matches ? 0 : 200);
+    }
+
+    $('#testimonial-prev').addEventListener('click', () => showTestimonial(testimonialIndex - 1));
+    $('#testimonial-next').addEventListener('click', () => showTestimonial(testimonialIndex + 1));
+    carouselDots.forEach(dot => dot.addEventListener('click', () => showTestimonial(Number(dot.dataset.slide))));
+    carousel.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        showTestimonial(testimonialIndex + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    let swipeStart = null;
+    carousel.addEventListener('pointerdown', event => {
+      if (event.pointerType === 'touch' && !event.target.closest('button')) swipeStart = { x: event.clientX, y: event.clientY };
+    });
+    carousel.addEventListener('pointerup', event => {
+      if (!swipeStart) return;
+      const dx = event.clientX - swipeStart.x;
+      const dy = event.clientY - swipeStart.y;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) showTestimonial(testimonialIndex + (dx < 0 ? 1 : -1));
+      swipeStart = null;
+    });
+    carousel.addEventListener('pointercancel', () => { swipeStart = null; });
+
+    /* 05. Diálogos acessíveis. Textos e dados digitados usam textContent. */
+    const dialog = $('#site-dialog');
+    const dialogContent = $('#dialog-content');
+    let dialogOpener = null;
+
+    function prepareDialog(templateId) {
+      if (!dialog.open) dialogOpener = document.activeElement;
+      setMenu(false);
+      dialogContent.replaceChildren($(templateId).content.cloneNode(true));
+    }
+
+    function presentDialog() {
+      if (!dialog.open) dialog.showModal();
+      document.body.classList.add('dialog-open');
+      $('#dialog-title', dialogContent).focus({ preventScroll: true });
+      dialog.scrollTop = 0;
+    }
+
+    function openInfo({ title, eyebrow = 'Ecovila Sustentar', paragraphs = [], details = [], actionLabel = 'Vamos conversar', action = () => openContact('visit') }) {
+      prepareDialog('#info-template');
+      $('[data-info-eyebrow]', dialogContent).textContent = eyebrow;
+      $('#dialog-title', dialogContent).textContent = title;
+      const body = $('[data-info-body]', dialogContent);
+      paragraphs.forEach(text => { const paragraph = document.createElement('p'); paragraph.textContent = text; body.append(paragraph); });
+      const detailList = $('[data-info-details]', dialogContent);
+      detailList.hidden = !details.length;
+      details.forEach(([label, text]) => {
+        const row = document.createElement('div');
+        const term = document.createElement('dt');
+        const description = document.createElement('dd');
+        term.textContent = label;
+        description.textContent = text;
+        row.append(term, description);
+        detailList.append(row);
+      });
+      $('[data-info-actions]', dialogContent).hidden = !actionLabel;
+      const button = $('[data-info-button]', dialogContent);
+      button.textContent = actionLabel || '';
+      button.addEventListener('click', action);
+      presentDialog();
+    }
+
+    function openContact(kind = 'visit') {
+      if (!EXPERIENCES[kind]) kind = 'visit';
+      prepareDialog('#contact-template');
+      const interest = $('#contact-interest', dialogContent);
+      const form = $('#contact-form', dialogContent);
+      const preview = $('#email-preview', dialogContent);
+      interest.value = kind;
+      function updateInterest() {
+        const experience = EXPERIENCES[interest.value];
+        $('#dialog-title', dialogContent).textContent = experience.title;
+        $('#contact-intro', dialogContent).textContent = experience.intro;
+      }
+      updateInterest();
+      interest.addEventListener('change', updateInterest);
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const nameInput = $('#contact-name', form);
+        nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Por favor, informe seu nome.');
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const subject = `Ecovila Sustentar: ${EXPERIENCES[data.get('interest')].label}`;
+        const lines = [
+          'Olá, comunidade da Ecovila Sustentar!', '',
+          `Meu nome é ${String(data.get('name')).trim()}.`,
+          `Tenho interesse em: ${EXPERIENCES[data.get('interest')].label}.`,
+          `Meu e-mail para contato: ${String(data.get('email')).trim()}`
+        ];
+        if (String(data.get('period')).trim()) lines.push(`Período de interesse: ${String(data.get('period')).trim()}`);
+        if (String(data.get('message')).trim()) lines.push('', String(data.get('message')).trim());
+        lines.push('', 'Gostaria de conversar sobre as possibilidades. Obrigado!');
+        const body = lines.join('\n');
+        $('#email-summary', preview).textContent = body;
+        $('#email-send', preview).href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        form.hidden = true;
+        preview.hidden = false;
+        $('#preview-title', preview).focus({ preventScroll: true });
+        dialog.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+      });
+      $('#contact-name', form).addEventListener('input', event => event.target.setCustomValidity(''));
+      $('#email-edit', preview).addEventListener('click', () => {
+        form.hidden = false;
+        preview.hidden = true;
+        $('#contact-name', form).focus();
+      });
+      presentDialog();
+    }
+
+    $('#dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => {
+      document.body.classList.remove('dialog-open');
+      if (dialogOpener && dialogOpener.isConnected) dialogOpener.focus({ preventScroll: true });
+    });
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    });
+
+    /* 06. Links não configurados abrem uma explicação, nunca uma URL quebrada. */
+    function externalUrl(value) {
+      if (!value || value.includes('[')) return null;
+      try { const url = new URL(value); return url.protocol === 'https:' ? url.href : null; }
+      catch { return null; }
+    }
+
+    document.addEventListener('click', event => {
+      const trigger = event.target.closest('[data-action]');
+      if (!trigger) return;
+      const { action, kind, key, index, network } = trigger.dataset;
+      if (action === 'contact') openContact(kind);
+      if (action === 'project' && PROJECTS[key]) openInfo({ ...PROJECTS[key], eyebrow: 'Descubra a Ecovila', actionLabel: 'Quero conhecer de perto', action: () => openContact(key === 'comunidade' ? 'move' : 'visit') });
+      if (action === 'article') {
+        const article = ARTICLES[Number(index)];
+        if (article) openInfo({ title: article.title, eyebrow: `Ecos da Vila · ${article.category}`, paragraphs: [article.text, 'Este é um espaço editorial demonstrativo. O artigo real será inserido pela Ecovila.'], details: [['Publicação', '[data de publicação]'], ['Autoria', '[nome da pessoa autora]']], actionLabel: 'Voltar para o blog', action: () => dialog.close() });
+      }
+      if (action === 'tickets') {
+        const url = externalUrl(CONFIG.tickets);
+        if (url) { window.open(url, '_blank', 'noopener,noreferrer'); return; }
+        openInfo({ title: 'Seu encontro com o SustentArte', eyebrow: 'Arte e sustentabilidade', paragraphs: ['O SustentArte é o festival anual da Ecovila, com venda de ingressos.', 'A venda não está configurada nesta demonstração. Nenhum pagamento será solicitado. Converse com a comunidade para saber mais.'], details: [['Próxima edição', CONFIG.festivalDate], ['Programação', '[programação da próxima edição]'], ['Ingresso', '[valor do ingresso]'], ['Venda oficial', CONFIG.tickets]], actionLabel: 'Perguntar sobre o festival', action: () => openContact('festival') });
+      }
+      if (action === 'social' && ['instagram', 'facebook'].includes(network)) {
+        const url = externalUrl(CONFIG[network]);
+        if (url) { window.open(url, '_blank', 'noopener,noreferrer'); return; }
+        openInfo({ title: network === 'instagram' ? 'Acompanhe a vida por aqui' : 'Encontre a nossa comunidade', eyebrow: network === 'instagram' ? 'Instagram' : 'Facebook', paragraphs: [network === 'instagram' ? 'Você encontra a Ecovila no Instagram como @ecovilasustentar.' : 'O endereço do perfil no Facebook será incluído pela Ecovila.', 'O link desta rede social é um espaço reservado nesta demonstração.'], details: [['Link do perfil', CONFIG[network]]], actionLabel: 'Entendi', action: () => dialog.close() });
+      }
+      if (action === 'whatsapp') {
+        const number = CONFIG.whatsapp.replace(/\D/g, '');
+        if (!CONFIG.whatsapp.includes('[') && /^\d{10,15}$/.test(number)) {
+          window.open(`https://wa.me/${number}?text=${encodeURIComponent('Olá! Gostaria de conhecer a Ecovila Sustentar.')}`, '_blank', 'noopener,noreferrer');
+          return;
+        }
+        openInfo({ title: 'Vamos conversar?', eyebrow: 'Contato com a Ecovila', paragraphs: ['O WhatsApp ainda precisa ser configurado nesta demonstração. Enquanto isso, você pode preparar uma mensagem e entrar em contato pelo e-mail da Ecovila.'], details: [['WhatsApp', CONFIG.whatsapp], ['E-mail', CONFIG.email]], actionLabel: 'Preparar uma mensagem', action: () => openContact('visit') });
+      }
+      if (action === 'demo') {
+        openInfo({ title: 'Uma demo pronta para criar raízes', eyebrow: 'Transparência e edição', paragraphs: ['Este site é uma demonstração institucional. Dados, nomes, depoimentos, datas, preços e links não informados estão identificados entre colchetes.', 'Todas as fotografias são ilustrativas, provenientes do Pexels, e não representam os espaços, as pessoas ou os eventos reais da Ecovila. Os gradientes mantêm os espaços de imagem quando uma foto não está disponível.', 'A newsletter apenas simula a validação do e-mail. O formulário de contato prepara uma mensagem para seu próprio aplicativo de e-mail. Nenhum dado é enviado automaticamente ou armazenado pelo site.', 'Fontes, fotografias e Tailwind são carregados de serviços externos. Não há analytics ou cookies de marketing implementados nesta demo.'], details: [['Antes de publicar', '[Inserir fotos próprias, confirmar dados e configurar links e newsletter]'], ['Fotografias ilustrativas', 'Pexels: VANNGO Ng, Greta Hoffman, Mikhail Nilov, Gustavo Fring, Dmytro Glazunov, Abdullah Öğük e Milo Deckert.'], ['Foto de capa desejada', '[Mata Atlântica ao amanhecer na Ecovila]']], actionLabel: 'Continuar explorando', action: () => dialog.close() });
+      }
+    });
+
+    /* 07. Newsletter demonstrativa: validação nativa, sem rede ou armazenamento. */
+    $('#newsletter-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const input = $('#newsletter-email');
+      input.value = input.value.trim();
+      if (!event.currentTarget.reportValidity()) return;
+      const status = $('#newsletter-status');
+      status.hidden = false;
+      status.textContent = 'Inscrição simulada com sucesso. Seu e-mail foi validado, mas não foi enviado nem armazenado. [Conectar a um serviço de newsletter para ativar as inscrições.]';
+      event.currentTarget.reset();
+    });
+    $('#newsletter-email').addEventListener('input', () => { $('#newsletter-status').hidden = true; });
+
+    /* 08. Entrada ao rolar e contadores. Placeholders apenas entram, sem números falsos. */
+    function animateCounters() {
+      $$('.counter').forEach(counter => {
+        counter.parentElement.classList.add('counted');
+        const rawValue = counter.dataset.value.trim();
+        if (!/^\d+$/.test(rawValue)) { counter.textContent = counter.dataset.placeholder; return; }
+        const target = Number(rawValue);
+        const prefix = counter.dataset.prefix || '';
+        const format = value => prefix + (counter.dataset.format === 'year' ? String(value) : value.toLocaleString('pt-BR'));
+        if (reducedMotion.matches) { counter.textContent = format(target); return; }
+        const start = performance.now();
+        function tick(time) {
+          const progress = Math.min((time - start) / 1400, 1);
+          counter.textContent = format(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      document.documentElement.classList.add('motion-ready');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+        });
+      }, { threshold: .09, rootMargin: '0px 0px -20px 0px' });
+      $$('.reveal').forEach(element => revealObserver.observe(element));
+
+      const counterObserver = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) { animateCounters(); counterObserver.disconnect(); }
+      }, { threshold: .3 });
+      counterObserver.observe($('#impacto'));
+
+      const navLinks = $$('.primary-nav a');
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach(link => {
+            if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+          });
+        });
+      }, { rootMargin: '-12% 0px -64% 0px', threshold: 0 });
+      navLinks.forEach(link => { const section = $(link.hash); if (section) sectionObserver.observe(section); });
+      sectionObserver.observe($('#inicio'));
+    } else {
+      animateCounters();
+    }
+
+    /* 09. Se uma foto externa falhar, seu espaço mantém o gradiente e a legenda. */
+    $$('img').forEach(image => {
+      function fallback() {
+        const frame = image.closest('.photo-placeholder, .hero-media');
+        if (!frame || frame.classList.contains('media-unavailable')) return;
+        image.hidden = true;
+        frame.classList.add('media-unavailable');
+        if (!frame.classList.contains('hero-media')) {
+          const label = document.createElement('span');
+          label.className = 'image-fallback-text';
+          label.textContent = '[Espaço reservado para a fotografia]';
+          frame.append(label);
+        }
+      }
+      image.addEventListener('error', fallback);
+      if (image.complete && image.naturalWidth === 0) fallback();
+    });
+  </script>
+</body>
+</html>
